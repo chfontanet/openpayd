@@ -23,7 +23,8 @@ Once is up and running, we can start the application. The tables will be created
 ```mvn spring-boot:run```
 
 If you want to connect to database to check the tables or the values, these are the parameters needed:
-```database: postgres
+```
+database: postgres
 port: 5432
 username: postgres
 password: password
