@@ -1,4 +1,4 @@
-# openpayd
+Overview
 ========
 I have developed my test in Java 8.
 Is a Spring Boot application with maven, with the following endPoints:
@@ -15,16 +15,37 @@ Database.
 The application is organised in 4 folders, **exceptions**, with the specific exceptions throwing the correct HttpStatus, **persistence** with model and repository classes, **rest** with the controllers and DTO, and **service** with the logic of the application.
 
 To start the application, first we need start the docker with the postgres image:
+
 ```docker run --name docker-postgres -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres```
+
 Once is up and running, we can start the application. The tables will be created in postgres when starting the application:
+
 ```mvn spring-boot:run```
 
 If you want to connect to database to check the tables or the values, these are the parameters needed:
 ```database: postgres
 port: 5432
 username: postgres
-password: password```
+password: password
+```
+Once the application is started, you can access to it trough the following URL's:
 
-In the root of the project there is the file _Openpayd.postman_collection.json_ with test scenarios to consume the service.
+### POST Client
+http://localhost:8080/client
+### GET Client(s)
+http://localhost:8080/clients
+http://localhost:8080/client/{clientId}
+### POST Client Account
+http://localhost:8080/client/{clientId}/account
+### GET Client Accounts
+http://localhost:8080/client/{clientId}/accounts
+### PUT Transaction
+http://localhost:8080/transaction
+### GET Account Transactions
+http://localhost:8080/account/{AccountId}/transactions
+
+In the root of the project there is the file *Openpayd.postman_collection.json* with test scenarios to consume the service.
 Since the ID's can be different, in the URL's and some bodies in POST and PUT is necessary to modify the parameters with the ID created. The parameters have the format `{client_1}` or `{client_2_Account_1}` to identify the necessary value. All of them are longs.
 I did not have time to create environment variables in Postman to avoid this.
+
+
