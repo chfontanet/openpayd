@@ -1,0 +1,248 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Openpayd",
+		"_postman_id": "8518aad7-c1d9-f677-d045-f4b4b0e867c5",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Client 1 Account Transactions",
+			"request": {
+				"url": "http://localhost:8080/account/{client_1_Account_1}/transactions",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Client 2 Account Transactions",
+			"request": {
+				"url": "http://localhost:8080/account/{client_2_Account_1}/transactions",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Client 1 Accounts",
+			"request": {
+				"url": "http://localhost:8080/client/{client_1}/accounts",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Client 2 Accounts",
+			"request": {
+				"url": "http://localhost:8080/client/2/accounts",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Clients",
+			"request": {
+				"url": "http://localhost:8080/clients",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Client 1",
+			"request": {
+				"url": "http://localhost:8080/client/{client_1}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Client 2",
+			"request": {
+				"url": "http://localhost:8080/client/{client_2}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "1.- POST Client 1",
+			"request": {
+				"url": "http://localhost:8080/client",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Michael\",\n    \"surname\": \"Jordan\",\n    \"primaryAddress\": {\n        \"addressLine1\": \"23 A Street\",\n        \"addressLine2\": \"House 39\",\n        \"city\": \"Chicago\",\n        \"country\": \"US\"\n    },\n    \"secondaryAddress\": {\n        \"addressLine1\": \"380 B Street\",\n        \"addressLine2\": \"Flat 3\",\n        \"city\": \"London\",\n        \"country\": \"UK\"\n    }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "2.- POST Client 2",
+			"request": {
+				"url": "http://localhost:8080/client",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Larry\",\n    \"surname\": \"Bird\",\n    \"primaryAddress\": {\n        \"addressLine1\": \"88 C Street\",\n        \"addressLine2\": \"House C\",\n        \"city\": \"Boston\",\n        \"country\": \"US\"\n    },\n    \"secondaryAddress\": {\n        \"addressLine1\": \"33 D Street\",\n        \"addressLine2\": \"Flat F\",\n        \"city\": \"Dublin\",\n        \"country\": \"Ireland\"\n    }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "3.- POST Client 1 Account 1",
+			"request": {
+				"url": "http://localhost:8080/client/{client_1}/account",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"CURRENT\",\n    \"balance\": 20,\n    \"balanceStatus\": \"CR\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "4.- POST Client 1 Account 2",
+			"request": {
+				"url": "http://localhost:8080/client/1/account",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"SAVINGS\",\n    \"balance\": 200,\n    \"balanceStatus\": \"CR\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "5.- POST Client 2 Account 1",
+			"request": {
+				"url": "http://localhost:8080/client/2/account",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"CURRENT\",\n    \"balance\": 200,\n    \"balanceStatus\": \"CR\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "6.- PUT Transaction both CR",
+			"request": {
+				"url": "http://localhost:8080/transaction",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"debitAccount\": {client_1_Account_1},\n    \"creditAccount\": {client_2_Account_1},\n    \"amount\": 5,\n    \"message\": \"Account 1 of client 1 (Michael) should have 15 (CR) and Account 1 of client 2 (Larry) should have 205 (CR)\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "7.- PUT Transaction Account 1 DR",
+			"request": {
+				"url": "http://localhost:8080/transaction",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"debitAccount\": 1,\n    \"creditAccount\": 3,\n    \"amount\": 20,\n    \"message\": \"Account 1 should have -15 (DR) and Account 3 should have 235 (CR)\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "8.- PUT Transaction Account 2 DR",
+			"request": {
+				"url": "http://localhost:8080/transaction",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"debitAccount\": {client_2_Account_1},\n    \"creditAccount\": {client_1_Account_1},\n    \"amount\": 250,\n    \"message\": \"Account 1 of client 1 (Michael) should have 235 (CR) and Account 1 of client 2 (Larry) should have -15 (DR)\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
